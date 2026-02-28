@@ -1,0 +1,99 @@
+
+cat("R LOOPS IMPLEMENTATION STARTED\n\n")
+#  FOR LOOP - Print 1 to 5
+cat("FOR LOOP: Print 1 to 5\n")
+for(i in 1:5){
+  print(i)
+}
+#  FOR LOOP - Even Numbers 1 to 10
+cat("\nFOR LOOP: Even Numbers 1 to 10\n")
+for(i in 1:10){
+  if(i %% 2 == 0){
+    print(i)
+  }
+}
+#  FOR LOOP - Sum of First 10 Numbers
+cat("\nFOR LOOP: Sum of First 10 Numbers\n")
+sum_value <- 0
+for(i in 1:10){
+  sum_value <- sum_value + i
+}
+cat("Sum =", sum_value, "\n")
+#  FOR LOOP - Loop Through Vector
+cat("\nFOR LOOP: Multiply Vector Elements by 2\n")
+numbers <- c(10, 20, 30, 40)
+for(num in numbers){
+  print(num * 2)
+}
+#  WHILE LOOP - Print 1 to 5
+cat("\nWHILE LOOP: Print 1 to 5\n")
+i <- 1
+while(i <= 5){
+  print(i)
+  i <- i + 1
+}
+
+# WHILE LOOP - Factorial of 5
+cat("\nWHILE LOOP: Factorial of 5\n")
+num <- 5
+fact <- 1
+i <- 1
+while(i <= num){
+  fact <- fact * i
+  i <- i + 1
+}
+cat("Factorial =", fact, "\n")
+
+#  REPEAT LOOP with BREAK
+cat("\nREPEAT LOOP: Stop at 5\n")
+i <- 1
+repeat{
+  print(i)
+  i <- i + 1
+  if(i > 5){
+    break
+  }
+}
+#  FOR LOOP with BREAK
+
+cat("\nFOR LOOP with BREAK (Stop at 6)\n")
+for(i in 1:10){
+  if(i == 6){
+    break
+  }
+  print(i)
+}
+
+#  FOR LOOP with NEXT
+cat("\nFOR LOOP with NEXT (Skip 3)\n")
+for(i in 1:5){
+  if(i == 3){
+    next
+  }
+  print(i)
+}
+
+#  NESTED LOOP - Multiplication Table (1 to 3)
+cat("\nNESTED LOOP: Multiplication Table\n")
+for(i in 1:3){
+  for(j in 1:3){
+    cat(i, "x", j, "=", i*j, "\n")
+  }
+}
+
+# PRACTICAL EXAMPLE - Data Frame Loop
+cat("\nPRACTICAL EXAMPLE: Student Result\n")
+students <- data.frame(
+  Name = c("A","B","C"),
+  Marks = c(90, 75, 85)
+)
+
+for(i in 1:nrow(students)){
+  if(students$Marks[i] >= 80){
+    cat(students$Name[i], "- Distinction\n")
+  } else {
+    cat(students$Name[i], "- Pass\n")
+  }
+}
+
+cat("\nR LOOPS IMPLEMENTATION COMPLETED\n")
