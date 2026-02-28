@@ -1,0 +1,118 @@
+#️ Print Statement
+print("Hello, Welcome to R Programming!")
+# ️ Variables and Data Types
+num <- 10
+decimal <- 3.14
+integer_num <- 5L
+text <- "Surya"
+logical_val <- TRUE
+complex_num <- 2+3i
+print(num)
+print(class(decimal))
+print(class(integer_num))
+print(class(text))
+print(class(logical_val))
+print(class(complex_num))
+# ️ Arithmetic Operators
+a <- 15
+b <- 4
+
+cat("Addition:", a + b, "\n")
+cat("Subtraction:", a - b, "\n")
+cat("Multiplication:", a * b, "\n")
+cat("Division:", a / b, "\n")
+cat("Power:", a ^ b, "\n")
+cat("Modulus:", a %% b, "\n")
+cat("Integer Division:", a %/% b, "\n")
+
+# ️ Relational Operators
+cat("Is a > b?", a > b, "\n")
+cat("Is a == b?", a == b, "\n")
+cat("Is a != b?", a != b, "\n")
+
+# ️ Logical Operators
+x <- TRUE
+y <- FALSE
+
+cat("AND:", x & y, "\n")
+cat("OR:", x | y, "\n")
+cat("NOT:", !x, "\n")
+
+# ️ Vectors
+vector1 <- c(1, 2, 3, 4, 5)
+print(vector1)
+cat("Second element:", vector1[2], "\n")
+cat("Sum:", sum(vector1), "\n")
+cat("Mean:", mean(vector1), "\n")
+
+# ️ List
+my_list <- list(name="Surya", age=21, marks=95)
+print(my_list)
+cat("Access name from list:", my_list$name, "\n")
+
+# ️ Matrix
+my_matrix <- matrix(1:6, nrow=2, ncol=3)
+print(my_matrix)
+
+# ️ Array
+my_array <- array(1:8, dim=c(2,2,2))
+print(my_array)
+
+# Data Frame
+students <- data.frame(
+  Name=c("A","B","C"),
+  Marks=c(90,85,88)
+)
+print(students)
+cat("Average Marks:", mean(students$Marks), "\n")
+
+# ️ Type Conversion
+char_num <- "100"
+converted_num <- as.numeric(char_num)
+cat("Converted to numeric:", converted_num, "\n")
+
+# ️ Conditional Statements
+value <- 20
+
+if(value > 10){
+  print("Value is greater than 10")
+} else {
+  print("Value is less than or equal to 10")
+}
+
+# ️ For Loop
+cat("For Loop Output:\n")
+for(i in 1:5){
+  print(i)
+}
+
+# ️ While Loop
+cat("While Loop Output:\n")
+i <- 1
+while(i <= 5){
+  print(i)
+  i <- i + 1
+}
+
+#  Function
+square <- function(x){
+  return(x^2)
+}
+
+cat("Square of 5:", square(5), "\n")
+
+add <- function(a,b){
+  return(a+b)
+}
+cat("Addition using function:", add(10,20), "\n")
+#  Built-in Functions
+numbers <- c(10,20,30,40,50)
+
+cat("Max:", max(numbers), "\n")
+cat("Min:", min(numbers), "\n")
+cat("Length:", length(numbers), "\n")
+cat("Structure:\n")
+str(numbers)
+
+
+print("R Programming Basics Completed Successfully!")
