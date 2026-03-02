@@ -1,0 +1,27 @@
+# Read CSV file
+data <- read.csv("data.csv", header = TRUE, stringsAsFactors = FALSE)
+
+# Display first 6 rows
+print(head(data))
+
+# Display last 6 rows
+print(tail(data))
+
+# Structure of dataset
+print(str(data))
+
+# Summary statistics
+print(summary(data))
+
+# Dimensions of dataset
+print(dim(data))
+
+# Column names
+print(colnames(data))
+
+# Check missing values
+print(colSums(is.na(data)))
+
+# Mean of numeric columns
+numeric_cols <- sapply(data, is.numeric)
+print(colMeans(data[, numeric_cols], na.rm = TRUE))
