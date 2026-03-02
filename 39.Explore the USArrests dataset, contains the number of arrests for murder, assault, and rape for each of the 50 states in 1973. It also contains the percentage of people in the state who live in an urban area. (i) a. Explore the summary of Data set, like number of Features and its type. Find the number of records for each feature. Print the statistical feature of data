@@ -1,0 +1,61 @@
+# Load dataset
+data(USArrests)
+
+# (i.a) Summary, number of features, types, records, statistics
+print(dim(USArrests))          # Rows and Columns
+print(str(USArrests))          # Structure and types
+print(summary(USArrests))      # Statistical summary
+print(colSums(!is.na(USArrests)))  # Number of records per feature
+
+# (i.b) State with largest rape arrests
+max_rape_state <- rownames(USArrests)[which.max(USArrests$Rape)]
+print(max_rape_state)
+
+# (i.c) States with max and min murder rate
+max_murder_state <- rownames(USArrests)[which.max(USArrests$Murder)]
+min_murder_state <- rownames(USArrests)[which.min(USArrests$Murder)]
+print(max_murder_state)
+print(min_murder_state)
+
+# (ii.a) Correlation among features
+print(cor(USArrests))
+
+# (ii.b) States with Assault > median
+median_assault <- median(USArrests$Assault)
+states_high_assault <- rownames(USArrests)[USArrests$Assault > median_assault]
+print(states_high_assault)
+
+# (ii.c) States in bottom 25% of Murder
+quantile_murder_25 <- quantile(USArrests$Murder, 0.25)
+states_bottom_murder <- rownames(USArrests)[USArrests$Murder <= quantile_murder_25]
+print(states_bottom_murder)
+
+# (iii.a) Histogram and Density plot of Murder
+hist(USArrests$Murder,
+     main = "Histogram of Murder Arrests",
+     xlab = "Murder Rate",
+     probability = TRUE)
+
+lines(density(USArrests$Murder), col = "blue")
+
+# (iii.b) Scatter plot: Murder vs UrbanPop (colored by Assault)
+assault_scaled <- (USArrests$Assault - min(USArrests$Assault)) /
+                  (max(USArrests$Assault) - min(USArrests$Assault))
+
+colors <- rgb(assault_scaled, 0, 1 - assault_scaled)
+
+plot(USArrests$UrbanPop,
+     USArrests$Murder,
+     col = colors,
+     pch = 16,
+     xlab = "Urban Population (%)",
+     ylab = "Murder Rate",
+     main = "Murder vs Urban Population (Colored by Assault)")
+
+# (iii.c) Bar graph of Murder rate by State
+barplot(USArrests$Murder,
+        names.arg = rownames(USArrests),
+        las = 2,
+        main = "Murder Rate by State",
+        ylab = "Murder Rate",
+        cex.names = 0.6)
