@@ -1,0 +1,19 @@
+  # Load built-in women dataset
+data(women)
+
+# Display dataset
+print(head(women))
+
+# Create factor for height (categorize into Short, Medium, Tall)
+height_factor <- cut(women$height,
+                     breaks = 3,
+                     labels = c("Short", "Medium", "Tall"))
+
+# Add factor to dataset
+women$Height_Category <- height_factor
+
+# Display updated dataset
+print(women)
+
+# Display structure
+str(women)
