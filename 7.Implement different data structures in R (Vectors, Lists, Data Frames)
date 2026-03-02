@@ -1,0 +1,38 @@
+# VECTORS
+num_vector <- c(10, 20, 30, 40, 50)
+char_vector <- c("Apple", "Banana", "Mango")
+logical_vector <- c(TRUE, FALSE, TRUE)
+
+print(num_vector)
+print(char_vector)
+print(logical_vector)
+
+print(sum(num_vector))
+print(length(num_vector))
+
+
+# LIST
+student_list <- list(
+  ID = 101,
+  Name = "Surya",
+  Marks = c(85, 90, 88),
+  Passed = TRUE
+)
+
+print(student_list)
+print(student_list$Name)
+print(student_list$Marks)
+
+
+# DATA FRAME
+student_df <- data.frame(
+  ID = c(1, 2, 3),
+  Name = c("Arun", "Bala", "Charan"),
+  Marks = c(75, 88, 92),
+  Passed = c(TRUE, TRUE, TRUE)
+)
+
+print(student_df)
+print(str(student_df))
+print(student_df$Marks)
+print(student_df[2, 3])
