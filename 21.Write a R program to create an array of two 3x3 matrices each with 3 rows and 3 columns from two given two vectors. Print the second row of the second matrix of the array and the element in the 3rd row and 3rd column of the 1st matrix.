@@ -1,0 +1,18 @@
+# Create two vectors
+vector1 <- 1:9
+vector2 <- 10:18
+
+# Combine vectors
+values <- c(vector1, vector2)
+
+# Create array of two 3x3 matrices (3 rows, 3 columns, 2 matrices)
+my_array <- array(values, dim = c(3, 3, 2))
+
+# Print the array
+print(my_array)
+
+# Print the second row of the second matrix
+print(my_array[2, , 2])
+
+# Print the element in 3rd row and 3rd column of the 1st matrix
+print(my_array[3, 3, 1])
