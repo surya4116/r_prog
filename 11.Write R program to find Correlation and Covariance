@@ -1,0 +1,22 @@
+  # Create two numeric vectors
+x <- c(10, 20, 30, 40, 50)
+y <- c(12, 25, 28, 45, 55)
+
+# Calculate Covariance
+covariance <- cov(x, y)
+print("Covariance:")
+print(covariance)
+
+# Calculate Correlation
+correlation <- cor(x, y)
+print("Correlation:")
+print(correlation)
+
+# Using a data frame
+data <- data.frame(x, y)
+
+print("Covariance Matrix:")
+print(cov(data))
+
+print("Correlation Matrix:")
+print(cor(data))
