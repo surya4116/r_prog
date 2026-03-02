@@ -1,0 +1,12 @@
+# Create two vectors
+vector1 <- 1:9
+vector2 <- 10:18
+
+# Combine vectors
+values <- c(vector1, vector2)
+
+# Create 3x3x2 array (3 rows, 3 columns, 2 tables)
+my_array <- array(values, dim = c(3, 3, 2))
+
+# Print the array
+print(my_array)
