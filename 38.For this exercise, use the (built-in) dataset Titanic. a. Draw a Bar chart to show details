@@ -1,0 +1,15 @@
+# Load Titanic dataset
+data(Titanic)
+
+# Convert table to data frame
+titanic_df <- as.data.frame(Titanic)
+
+# Aggregate total passengers by Survival
+survival_counts <- aggregate(Freq ~ Survived, data = titanic_df, sum)
+
+# Draw Bar Chart
+barplot(survival_counts$Freq,
+        names.arg = survival_counts$Survived,
+        main = "Titanic Survival Counts",
+        xlab = "Survived",
+        ylab = "Number of Passengers")
