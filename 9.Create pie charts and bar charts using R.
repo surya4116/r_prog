@@ -1,0 +1,17 @@
+# Sample data
+categories <- c("A", "B", "C", "D")
+values <- c(25, 40, 20, 15)
+
+# Bar Chart
+barplot(values,
+        names.arg = categories,
+        main = "Bar Chart",
+        xlab = "Categories",
+        ylab = "Values",
+        col = c("skyblue", "orange", "green", "pink"))
+
+# Pie Chart
+pie(values,
+    labels = categories,
+    main = "Pie Chart",
+    col = c("skyblue", "orange", "green", "pink"))
