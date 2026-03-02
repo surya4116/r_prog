@@ -1,0 +1,18 @@
+# Create numeric vector
+numeric_vector <- c(10, 20, 30, 40, 50)
+
+# Create character vector
+character_vector <- c("Apple", "Banana", "Mango")
+
+# Create logical vector
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
+
+# Display contents
+print(numeric_vector)
+print(character_vector)
+print(logical_vector)
+
+# Display type of vectors
+print(typeof(numeric_vector))
+print(typeof(character_vector))
+print(typeof(logical_vector))
