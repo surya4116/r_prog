@@ -1,0 +1,18 @@
+# Load built-in dataset
+data(airquality)
+
+# Display first few rows
+print(head(airquality))
+
+# Check whether it is a data frame
+print(is.data.frame(airquality))
+
+# Order the entire data frame by first and second column
+ordered_data <- airquality[order(airquality[,1], airquality[,2]), ]
+print(ordered_data)
+
+# Remove 'Solar.R' and 'Wind' variables
+modified_data <- ordered_data[, !(names(ordered_data) %in% c("Solar.R", "Wind"))]
+
+# Display modified data frame
+print(modified_data)
