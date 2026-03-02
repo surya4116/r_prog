@@ -1,0 +1,35 @@
+# Create dataset
+data <- data.frame(
+  StudyHours = c(1, 2, 1.5, 8, 9, 8.5, 4, 4.5, 5),
+  Marks = c(35, 40, 38, 85, 90, 88, 60, 65, 70)
+)
+
+# View dataset
+print(data)
+
+# Scale the data
+data_scaled <- scale(data)
+
+# Apply K-means clustering (k = 3)
+set.seed(123)
+kmeans_model <- kmeans(data_scaled, centers = 3)
+
+# Cluster assignments
+print("Cluster Assignments:")
+print(kmeans_model$cluster)
+
+# Cluster centers
+print("Cluster Centers:")
+print(kmeans_model$centers)
+
+# Plot clusters
+plot(data$StudyHours, data$Marks,
+     col = kmeans_model$cluster,
+     pch = 19,
+     main = "K-Means Clustering",
+     xlab = "Study Hours",
+     ylab = "Marks")
+
+points(kmeans_model$centers[,1] * sd(data$StudyHours) + mean(data$StudyHours),
+       kmeans_model$centers[,2] * sd(data$Marks) + mean(data$Marks),
+       col = 1:3, pch = 8, cex = 2)
