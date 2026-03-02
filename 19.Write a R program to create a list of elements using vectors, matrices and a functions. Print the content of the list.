@@ -1,0 +1,23 @@
+# Create a vector
+vec <- c(10, 20, 30, 40)
+
+# Create a matrix
+mat <- matrix(1:6, nrow = 2, ncol = 3)
+
+# Create a function
+my_function <- function(x) {
+  return(x^2)
+}
+
+# Create a list containing vector, matrix and function
+my_list <- list(
+  Vector = vec,
+  Matrix = mat,
+  Function = my_function
+)
+
+# Print the list
+print(my_list)
+
+# Call the function inside the list
+print(my_list$Function(5))
