@@ -1,0 +1,22 @@
+# Create three arrays (2 x 3)
+array1 <- array(1:6, dim = c(2, 3))
+array2 <- array(7:12, dim = c(2, 3))
+array3 <- array(13:18, dim = c(2, 3))
+
+# Combine arrays row-wise:
+# First row of array1, then first row of array2,
+# then first row of array3, followed by second rows in same order
+combined_array <- rbind(array1[1, ],
+                        array2[1, ],
+                        array3[1, ],
+                        array1[2, ],
+                        array2[2, ],
+                        array3[2, ])
+
+# Print arrays
+print(array1)
+print(array2)
+print(array3)
+
+# Print combined result
+print(combined_array)
