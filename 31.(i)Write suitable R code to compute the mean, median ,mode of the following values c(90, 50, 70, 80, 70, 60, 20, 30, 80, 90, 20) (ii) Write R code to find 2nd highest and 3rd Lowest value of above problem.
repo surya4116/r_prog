@@ -1,0 +1,21 @@
+# Given values
+x <- c(90, 50, 70, 80, 70, 60, 20, 30, 80, 90, 20)
+
+# (i) Mean, Median, Mode
+mean_value <- mean(x)
+median_value <- median(x)
+
+mode_value <- as.numeric(names(sort(table(x), decreasing = TRUE)[1]))
+
+print(mean_value)
+print(median_value)
+print(mode_value)
+
+# (ii) 2nd Highest and 3rd Lowest value
+sorted_x <- sort(unique(x))
+
+second_highest <- sorted_x[length(sorted_x) - 1]
+third_lowest <- sorted_x[3]
+
+print(second_highest)
+print(third_lowest)
