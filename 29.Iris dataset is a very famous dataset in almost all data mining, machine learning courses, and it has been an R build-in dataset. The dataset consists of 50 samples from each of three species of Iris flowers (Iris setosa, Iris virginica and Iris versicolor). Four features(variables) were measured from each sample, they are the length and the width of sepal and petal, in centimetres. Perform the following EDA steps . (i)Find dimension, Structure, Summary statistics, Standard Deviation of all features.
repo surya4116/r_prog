@@ -1,0 +1,53 @@
+# Load iris dataset
+data(iris)
+
+# (i) Dimension, Structure, Summary, Standard Deviation
+print(dim(iris))
+print(str(iris))
+print(summary(iris))
+print(sapply(iris[,1:4], sd))
+
+# (ii) Mean and SD grouped by Species
+mean_by_species <- aggregate(. ~ Species, data = iris, mean)
+sd_by_species <- aggregate(. ~ Species, data = iris[,1:4], 
+                           FUN = function(x) tapply(x, iris$Species, sd))
+print(mean_by_species)
+print(sd_by_species)
+
+# Alternative correct SD calculation by species
+sd_species <- aggregate(iris[,1:4], by = list(Species = iris$Species), sd)
+print(sd_species)
+
+# (iii) Quantiles of Sepal.Length and Sepal.Width
+print(quantile(iris$Sepal.Length))
+print(quantile(iris$Sepal.Width))
+
+# (iv) Create iris1 with Sepal.Length categorized by quantile
+iris1 <- iris
+iris1$Sepal.Length.Cate <- cut(
+  iris1$Sepal.Length,
+  breaks = quantile(iris1$Sepal.Length),
+  include.lowest = TRUE,
+  labels = c("Q1","Q2","Q3","Q4")
+)
+
+print(head(iris1))
+
+# (v) Average of numerical variables by Species and Sepal.Length.Cate
+avg_values <- aggregate(
+  iris1[,1:4],
+  by = list(Species = iris1$Species,
+            Sepal.Length.Cate = iris1$Sepal.Length.Cate),
+  mean
+)
+print(avg_values)
+
+# (vi) Average mean value (same grouped mean display)
+print(avg_values)
+
+# (vii) Pivot table based on Species and Sepal.Length.Cate
+pivot_table <- with(iris1,
+                    tapply(Sepal.Length,
+                           list(Species, Sepal.Length.Cate),
+                           mean))
+print(pivot_table)
