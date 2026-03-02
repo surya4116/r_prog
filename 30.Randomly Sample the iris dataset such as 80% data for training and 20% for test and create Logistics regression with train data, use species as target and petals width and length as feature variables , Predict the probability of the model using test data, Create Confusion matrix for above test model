@@ -1,0 +1,31 @@
+# Load iris dataset
+data(iris)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Create train (80%) and test (20%) split
+train_index <- sample(1:nrow(iris), 0.8 * nrow(iris))
+train_data <- iris[train_index, ]
+test_data  <- iris[-train_index, ]
+
+# Fit multinomial logistic regression model
+# (Using nnet package for multi-class logistic regression)
+# install.packages("nnet")  # Uncomment if not installed
+library(nnet)
+
+model <- multinom(Species ~ Petal.Length + Petal.Width, data = train_data)
+
+# Predict class probabilities on test data
+probabilities <- predict(model, test_data, type = "probs")
+print(probabilities)
+
+# Predict class labels
+predicted_class <- predict(model, test_data)
+
+# Actual class labels
+actual_class <- test_data$Species
+
+# Confusion Matrix
+conf_matrix <- table(Predicted = predicted_class, Actual = actual_class)
+print(conf_matrix)
