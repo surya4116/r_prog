@@ -1,0 +1,47 @@
+# Create sample strings
+str1 <- "Hello"
+str2 <- "World"
+str3 <- "   R Programming Language   "
+
+# 1. Concatenation
+paste_result <- paste(str1, str2)
+cat("paste():", paste_result, "\n")
+
+paste0_result <- paste0(str1, str2)
+cat("paste0():", paste0_result, "\n\n")
+
+# 2. String Length
+cat("nchar():", nchar(str1), "\n\n")
+
+# 3. Case Conversion
+cat("toupper():", toupper(str1), "\n")
+cat("tolower():", tolower(str2), "\n\n")
+
+# 4. Substring Extraction
+cat("substr():", substr(str1, 1, 4), "\n\n")
+
+# 5. Replace Substring
+replace_result <- sub("World", "R", paste_result)
+cat("sub():", replace_result, "\n")
+
+replace_all <- gsub("l", "L", str1)
+cat("gsub():", replace_all, "\n\n")
+
+# 6. Split String
+split_result <- strsplit("R is powerful", " ")
+cat("strsplit():\n")
+print(split_result)
+cat("\n")
+
+# 7. Trim Whitespace
+cat("trimws():", trimws(str3), "\n\n")
+
+# 8. Pattern Matching
+cat("grep():", grep("Hello", c("Hello", "Hi", "Hey")), "\n")
+cat("grepl():", grepl("World", paste_result), "\n\n")
+
+# 9. Find Position
+cat("regexpr():", regexpr("World", paste_result), "\n\n")
+
+# 10. Repeat String
+cat("strrep():", strrep("R ", 3), "\n")
