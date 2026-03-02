@@ -1,0 +1,15 @@
+# 5 x 4 matrix (default fill by columns)
+matrix1 <- matrix(1:20, nrow = 5, ncol = 4)
+print(matrix1)
+
+# 3 x 3 matrix with row and column labels, filled by rows
+matrix2 <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+rownames(matrix2) <- c("R1", "R2", "R3")
+colnames(matrix2) <- c("C1", "C2", "C3")
+print(matrix2)
+
+# 2 x 2 matrix with row and column labels, filled by columns
+matrix3 <- matrix(1:4, nrow = 2, ncol = 2, byrow = FALSE)
+rownames(matrix3) <- c("Row1", "Row2")
+colnames(matrix3) <- c("Col1", "Col2")
+print(matrix3)
