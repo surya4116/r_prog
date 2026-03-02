@@ -1,0 +1,31 @@
+# Load dataset
+data(airquality)
+
+# i. Compute mean temperature without using built-in mean()
+total_temp <- 0
+count_temp <- 0
+
+for (i in 1:nrow(airquality)) {
+  if (!is.na(airquality$Temp[i])) {
+    total_temp <- total_temp + airquality$Temp[i]
+    count_temp <- count_temp + 1
+  }
+}
+
+mean_temp <- total_temp / count_temp
+print(mean_temp)
+
+# ii. Extract first five rows
+print(airquality[1:5, ])
+
+# iii. Extract all columns except Temp and Wind
+print(airquality[, !(names(airquality) %in% c("Temp", "Wind"))])
+
+# iv. Find the coldest day (minimum temperature)
+min_temp <- min(airquality$Temp, na.rm = TRUE)
+coldest_day <- airquality[airquality$Temp == min_temp, ]
+print(coldest_day)
+
+# v. Number of days wind speed greater than 17 mph
+high_wind_days <- sum(airquality$Wind > 17, na.rm = TRUE)
+print(high_wind_days)
