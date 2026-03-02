@@ -1,0 +1,75 @@
+
+
+#  Built-in Functions
+x <- c(10, 20, 30, 40, 50)
+cat("Mean:", mean(x), "\n")
+cat("Sum:", sum(x), "\n")
+cat("Max:", max(x), "\n\n")
+
+#  User-Defined Function
+add <- function(a, b) {
+  return(a + b)
+}
+cat("Addition (5+3):", add(5, 3), "\n\n")
+
+#  Function without return() (Last expression returned automatically)
+multiply <- function(a, b) {
+  a * b
+}
+cat("Multiplication (4*6):", multiply(4, 6), "\n\n")
+
+#  Function with Default Arguments
+simple_interest <- function(p, r = 5, t = 2) {
+  (p * r * t) / 100
+}
+cat("Simple Interest (Default r,t):", simple_interest(1000), "\n")
+cat("Simple Interest (Custom r,t):", simple_interest(1000, 10, 3), "\n\n")
+
+#  Function with Conditional Statement
+check_even_odd <- function(n) {
+  if (n %% 2 == 0) {
+    "Even Number"
+  } else {
+    "Odd Number"
+  }
+}
+cat("Check 7:", check_even_odd(7), "\n\n")
+
+#  Function with Loop
+factorial_loop <- function(n) {
+  fact <- 1
+  for (i in 1:n) {
+    fact <- fact * i
+  }
+  fact
+}
+cat("Factorial of 5 (Loop):", factorial_loop(5), "\n\n")
+
+#  Recursive Function
+factorial_recursive <- function(n) {
+  if (n == 0) {
+    1
+  } else {
+    n * factorial_recursive(n - 1)
+  }
+}
+cat("Factorial of 5 (Recursive):", factorial_recursive(5), "\n\n")
+
+#  Anonymous Function
+square <- function(x) x^2
+cat("Square of 6:", square(6), "\n\n")
+
+#  Function Returning Multiple Values
+stats_function <- function(vec) {
+  list(
+    Mean = mean(vec),
+    Sum = sum(vec),
+    SD = sd(vec)
+  )
+}
+
+result <- stats_function(c(2,4,6,8))
+cat("Mean:", result$Mean, "\n")
+cat("Sum:", result$Sum, "\n")
+cat("Standard Deviation:", result$SD, "\n")
+
