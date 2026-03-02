@@ -1,0 +1,31 @@
+# Load dataset
+data(ChickWeight)
+
+# a. Box plot of weight grouped by Diet
+boxplot(weight ~ Diet,
+        data = ChickWeight,
+        main = "Boxplot of Weight by Diet",
+        xlab = "Diet",
+        ylab = "Weight",
+        col = c("lightblue","lightgreen","lightpink","lightyellow"))
+
+# b. Histogram of weight for Diet 1
+hist(ChickWeight$weight[ChickWeight$Diet == 1],
+     main = "Histogram of Weight (Diet 1)",
+     xlab = "Weight",
+     col = "lightblue",
+     border = "black")
+
+# c. Scatter plot of weight vs Time grouped by Diet
+plot(ChickWeight$Time,
+     ChickWeight$weight,
+     col = ChickWeight$Diet,
+     pch = 16,
+     main = "Weight vs Time grouped by Diet",
+     xlab = "Time",
+     ylab = "Weight")
+
+legend("topleft",
+       legend = levels(ChickWeight$Diet),
+       col = 1:length(levels(ChickWeight$Diet)),
+       pch = 16)
