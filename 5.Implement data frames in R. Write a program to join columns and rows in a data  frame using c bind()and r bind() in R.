@@ -1,0 +1,35 @@
+# Create first data frame
+student1 <- data.frame(
+  ID = c(1, 2, 3),
+  Name = c("Arun", "Bala", "Charan"),
+  Marks = c(85, 90, 88)
+)
+
+# Display first data frame
+print("First Data Frame:")
+print(student1)
+
+# Create second data frame (same number of rows for cbind)
+student2 <- data.frame(
+  Grade = c("A", "A+", "A"),
+  Age = c(20, 21, 19)
+)
+
+# Join columns using cbind()
+column_join <- cbind(student1, student2)
+
+print("After Column Bind (cbind):")
+print(column_join)
+
+# Create third data frame (same columns for rbind)
+student3 <- data.frame(
+  ID = c(4, 5),
+  Name = c("David", "Eshwar"),
+  Marks = c(75, 82)
+)
+
+# Join rows using rbind()
+row_join <- rbind(student1, student3)
+
+print("After Row Bind (rbind):")
+print(row_join)
